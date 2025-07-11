@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mahithosh | Link Card</title>
   <link rel="stylesheet" href="style.css" />
-
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -28,11 +27,51 @@
       <span class="close-btn">&times;</span>
       <h3>My Email Address</h3>
       <div class="email-display">
-        <p id="emailText">mahithoshreddy27@gmail.com</p>
+        <p id="emailText">mahithosh.example@mail.com</p>
         <button id="copyBtn">Copy</button>
       </div>
     </div>
   </div>
-  <script src="script.js"></script>
+
+  <script>
+    // Get elements
+    const emailBtn = document.getElementById('emailBtn');
+    const popup = document.getElementById('emailPopup');
+    const closeBtn = document.querySelector('.close-btn');
+    const copyBtn = document.getElementById('copyBtn');
+    const emailText = document.getElementById('emailText');
+
+    // Show popup when email button is clicked
+    emailBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      popup.style.display = 'block';
+    });
+
+    // Close popup when X is clicked
+    closeBtn.addEventListener('click', function() {
+      popup.style.display = 'none';
+    });
+
+    // Close popup when clicking outside
+    window.addEventListener('click', function(e) {
+      if (e.target === popup) {
+        popup.style.display = 'none';
+      }
+    });
+
+    // Copy email to clipboard
+    copyBtn.addEventListener('click', function() {
+      navigator.clipboard.writeText(emailText.textContent)
+        .then(() => {
+          copyBtn.textContent = 'Copied!';
+          setTimeout(() => {
+            copyBtn.textContent = 'Copy';
+          }, 2000);
+        })
+        .catch(err => {
+          console.error('Failed to copy: ', err);
+        });
+    });
+  </script>
 </body>
 </html>
