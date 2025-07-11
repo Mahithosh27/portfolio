@@ -285,3 +285,78 @@ body::before {
   z-index: -1;
   pointer-events: none;
 }
+
+/* Popup Styles */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background: rgba(18, 25, 20, 0.98);
+  padding: 30px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 15px 40px rgba(20, 255, 120, 0.2);
+  border: 1px solid rgba(80, 255, 160, 0.3);
+  position: relative;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #7dffb8;
+  transition: color 0.3s;
+}
+
+.close-btn:hover {
+  color: #3dff9d;
+}
+
+.email-display {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  background: rgba(30, 40, 35, 0.6);
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid rgba(80, 255, 160, 0.2);
+}
+
+.email-display p {
+  margin: 0;
+  font-size: 18px;
+  color: #b8ffd9;
+  word-break: break-all;
+}
+
+#copyBtn {
+  background: linear-gradient(135deg, rgba(30, 40, 35, 0.8), rgba(15, 25, 20, 0.9));
+  color: #f0f0f0;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s;
+  border: 1px solid rgba(80, 255, 160, 0.2);
+}
+
+#copyBtn:hover {
+  background: linear-gradient(135deg, rgba(40, 50, 45, 0.9), rgba(20, 30, 25, 0.95));
+  transform: translateY(-2px);
+}
