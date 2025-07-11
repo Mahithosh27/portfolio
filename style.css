@@ -12,10 +12,16 @@ body {
 }
 
 .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   animation: fadeIn 1s ease-out;
   perspective: 1000px;
+  min-height: 100vh;
 }
+
 
 .card {
   background: rgba(18, 25, 20, 0.95);
